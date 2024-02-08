@@ -16,5 +16,8 @@
     </head>
     <body>
         {% block body %}{% endblock %}
+         <footer >
+        <p class="d-flex justify-content-center mt-5">Copyright © 2023{% if 'now'|date('Y') > 2022 %} - {{ 'now'|date('Y') }}{% endif %} Ghislain Vachet</a></p>
+    </footer>
     </body>
 </html>

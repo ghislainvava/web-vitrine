@@ -7,6 +7,13 @@ if (!Encore.isRuntimeEnvironmentConfigured()) {
 }
 
 Encore
+    .configureLoaderRule('javascript', loaderRule => {
+    loaderRule.use.forEach(useEntry => {
+        if (useEntry.loader === 'babel-loader') {
+            useEntry.options.cacheDirectory = false;
+        }
+    });
+})
     // directory where compiled assets will be stored
     .setOutputPath('public/build/')
     // public path used by the web server to access the output path

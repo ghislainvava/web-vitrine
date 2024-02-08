@@ -6,14 +6,28 @@
 <style>
 
 </style>
+<div>
+     <header class="d-flex  justify-content-between">
+    
+        <div>
+            <img class="d-none d-md-inline logo-size" src="img/Logo Carca.svg" alt="Logo CarcassonneWeb">
+            <img class="d-inline d-md-none" src="img/Logo Carca 2.svg" alt="Logo CarcassonneWeb" style="width:100px;">
+        </div>
+        <nav class="mb-auto  p-5">
+        
+            <a href="http://127.0.0.1:8000"><i class="fa-solid fa-house"> Accueil</a>
+      
+        </nav>
+    </header>
 
-<div class="container">
-    <h2>Contactez-nous</h2>
-    {{ form_start(form, {'attr': {'class': 'form'}}) }}
-    {{ form_row(form.name, {'attr': {'class': 'form-control'}}) }}
-    {{ form_row(form.email, {'attr': {'class': 'form-control'}}) }}
-    {{ form_row(form.message, {'attr': {'class': 'form-control'}}) }}
-    {{ form_row(form.send, {'attr': {'class': 'btn btn-primary'}}) }}
-    {{ form_end(form) }}
+    <div class="container">
+        <h2>Contactez-nous</h2>
+        {{ form_start(form, {'attr': {'class': 'form'}}) }}
+        {{ form_row(form.name, {'attr': {'class': 'form-control'}}) }}
+        {{ form_row(form.email, {'attr': {'class': 'form-control'}}) }}
+        {{ form_row(form.message, {'attr': {'class': 'form-control'}}) }}
+        {{ form_row(form.send, {'attr': {'class': 'btn btn-primary'}}) }}
+        {{ form_end(form) }}
+    </div>
 </div>
 {% endblock %}
