@@ -17,7 +17,10 @@ jobs:
       with:
         ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-    - name: Deploy script
+    - name: Transfer files to the server
       run: |
-        scp /path/to/your/script.sh user@yourserver.com:/path/where/to/deploy/
-        ssh user@yourserver.com 'bash -s' < /path/where/to/deploy/script.sh
+        scp -r ./path/to/your/files ${{ secrets.USERNAME }}@${{ secrets.HOST }}:./destination/path/on/server
+
+    - name: Execute script on the server
+      run: |
+        ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }} 'bash ./destination/path/on/server/your_script.sh'
