@@ -4,13 +4,17 @@
 
 {% block body %}
 <style>
+body {
+    margin: auto;
+}
+
 /* Cible les liens dans la balise <nav> */
 nav a {
     text-decoration: none; /* Supprime le soulignement */
     font-weight: normal; /* Assurez-vous que la police n'est pas en gras par défaut */
-    font-size: 16px; /* Taille de police par défaut */
+    /* font-size: 16px; Taille de police par défaut */
     transition: font-weight 0.3s, font-size 0.3s; /* Ajoute une transition fluide pour le changement de style */
-    color : #0072BD; 
+    color : #6AB5D0; 
 }
 
 /* Au survol, mettez en gras et augmentez la taille de la police */
@@ -19,49 +23,163 @@ nav a:hover {
     font-size: 18px; /* Augmente la taille de police au survol */
 }
 
-i { color : #0072BD; }
+i { color : #6AB5D0; }
 
 .drap { 
     height: 150px;
-background-color: #0072BD;
+background-color: #6AB5D0;
 }
+.logo-size {
+  width: 200px;
+  height: auto;
+}
+.logo-size-one {
+  width: 100px;
+  height: auto;
+}
+
+header {
+    font-size: 36px;
+}
+.card {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    max-width: 500px; /* Vous pouvez ajuster cette largeur */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card-img-top {
+    width: 100%;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-title {
+    font-size: 24px; /* Taille du titre */
+    color: #333; /* Couleur du texte */
+}
+
+.card-text {
+    font-size: 16px; /* Taille du texte */
+    color: #666; /* Couleur du texte */
+}
+
+.card-price {
+    font-size: 20px; /* Taille du prix */
+    color: #6AB5D0; /* Couleur du prix, ici un vert */
+    font-weight: bold; /* Texte en gras */
+    margin-top: 10px; /* Espacement au-dessus du prix */
+}
+
+.title{
+    font-size: 36px;
+}
+
+.prestations{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+ .aside-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+        align-items: center; /* Ajouté pour le centrage vertical */
+        height: 100%;    
+ }
 
 
 </style>
 
-<div >
-    <header class="d-flex  justify-content-between">
+<div class="justify-content-center">
+    <header class=" d-flex justify-content-between">
     
     <div>
-        <img class="d-none d-md-inline" src="img/512Logo.png">
-        <img class="d-md-none" src="img/favicon.ico">
+        <img class="d-none d-md-inline logo-size" src="img/Logo Carca.svg" alt="Logo CarcassonneWeb">
+        <img class="d-inline d-md-none" src="img/Logo Carca 2.svg" alt="Logo CarcassonneWeb" style="width:100px;">
     </div>
     <nav class="mb-auto  p-5">
-        <a href="#" class="d-none d-md-inline">Accueil </i></a>
-        <a href="#" class="d-md-none"><i class="fa-solid fa-house"></i></a>
-        <a href="#" class="d-none d-md-inline">Contact</a>
-        <a href="#" class="d-md-none"><i class="fa-solid fa-address-card"></i></a>
+        <a href={{ path('app_contact') }} ><i class="fa-solid fa-address-card"></i> Contact</a>
     </nav>
+    <div class="mb-auto  p-5">+33 6 62 39 11 24</div>
 </header>
+
+<section class="drap"></section>
+
+<div class=" row    m-5">
+    <div class="d-flex justify-content-center presentation text-center">
+      <div class="img-ghis"><img src="/img/ghislain.jpeg" alt="Ghislain Vachet">
+</div>  
+        <div class="  aside-container ml-5"> 
+            <h1>Ghislain Vachet </h1>
+            <h2>Votre Développeur Freelance à Carcassonne </h2>
+            <h3>Mais pas que, je me déplace ou télétravaille dans toute la france</h3>
+            <h3>En tant que Développeur Web je vous propose de nombreuses solutions de site web, suivant vos besoins et a une échelles humaine.
+            Découvrez mes prestations</h3>
+        </div>
+
+    </div>
+</div>
 
 <section class="drap">
 
 </section>
 
-<div class="d-flex m-5">
- <img src="/img/ghislain.jpeg" alt="Ghislain Vachet">
+<div class=" row rounded border border-5  text-center m-5">
+    <h2 class="title my-5">Prestations</h2>
 
- <aside class="d-flex row text-center m-5"> <h2>Ghislain Vachet </h2>
- <h1>Votre Développeur Freelance</h1>
- <h3>En tant que Développeur Web je vous propose de nombreuses solutions de site web, suivant vos besoins et a une échelles humaine.
- Découvrez mes prestations</h3></aside>
-</div>
-   
+      <div class="d-flex justify-content-evenly flex-wrap">
+        
+      
+            <div class=" mb-5">
+                <div class="card ">
+                    <img src="img/No-code2-min.png" class="card-img-top" alt="Wordpress">
+                    <div class="card-body">
+                        <h2 class="card-title">Création de Site WordPress</h2>
+                        <p class="card-text">Je vous propose la création d'un site vitrine professionnel avec une page de contact, réalisé avec le CMS WordPress, incluant 1 an d'hébergement. Cette solution est idéale pour présenter efficacement votre entreprise en ligne.</p>
+                        <p class="card-price">Prestation à partir de 799€</p>
+                    </div>
+                </div>
+            </div>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/Users/bestUser/Desktop/vitrine/src/Controller/HomeController.php'|file_link(0) }}">src/Controller/HomeController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/Users/bestUser/Desktop/vitrine/templates/home/index.html.twig'|file_link(0) }}">templates/home/index.html.twig</a></code></li>
-    </ul>
+  
+            <div class=" mb-5">
+                <div class="card">
+                    <img src="img/Code2-min.png" class="card-img-top" alt="Code">
+                    <div class="card-body">
+                        <h2 class="card-title">Création de Site avec PHP/Symfony</h2>
+                        <p class="card-text">Offrez-vous un site vitrine sur-mesure, développé avec le framework PHP Symfony, garantissant performance et sécurité. Cette prestation inclut une conception personnalisée adaptée à vos besoins spécifiques.</p>
+                        <p class="card-price">Prestation à partir de 999€</p>
+                    </div>
+                </div>
+            </div>
+      
+         <div class=" mb-5">
+                <div class="card">
+                    <img src="img/e-commerce2-min.png" class="card-img-top" alt="e-commerce">
+                    <div class="card-body">
+                        <h2 class="card-title">Création de Site E-commerce</h2>
+                        <p class="card-text">Développez votre boutique en ligne avec une solution e-commerce complète, intégrant des fonctionnalités avancées pour une expérience utilisateur optimale. Bénéficiez d'un site sécurisé, rapide et entièrement personnalisable.</p>
+                        <p class="card-price">Prestation à partir de 2499€</p>
+                    </div>
+                </div>
+            </div>
+             
+  
+  </div>
+
+  
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
 </div>
 {% endblock %}
