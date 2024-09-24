@@ -4,129 +4,60 @@
 
 {% block body %}
 <style>
-body {
-    margin: auto;
-}
-
-/* Cible les liens dans la balise <nav> */
-nav a {
-    text-decoration: none; /* Supprime le soulignement */
-    font-weight: normal; /* Assurez-vous que la police n'est pas en gras par défaut */
-    /* font-size: 16px; Taille de police par défaut */
-    transition: font-weight 0.3s, font-size 0.3s; /* Ajoute une transition fluide pour le changement de style */
-    color : #6AB5D0; 
-}
-
-/* Au survol, mettez en gras et augmentez la taille de la police */
-nav a:hover {
-    font-weight: bold; /* Mettez en gras */
-    font-size: 18px; /* Augmente la taille de police au survol */
-}
-
-i { color : #6AB5D0; }
-
-.drap { 
-    height: 150px;
-background-color: #6AB5D0;
-}
-.logo-size {
-  width: 200px;
-  height: auto;
-}
-.logo-size-one {
-  width: 100px;
-  height: auto;
-}
-
-header {
-    font-size: 36px;
-}
-.card {
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    max-width: 500px; /* Vous pouvez ajuster cette largeur */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.card-img-top {
-    width: 100%;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-}
-
-.card-body {
-    padding: 15px;
-}
-
-.card-title {
-    font-size: 24px; /* Taille du titre */
-    color: #333; /* Couleur du texte */
-}
-
-.card-text {
-    font-size: 16px; /* Taille du texte */
-    color: #666; /* Couleur du texte */
-}
-
-.card-price {
-    font-size: 20px; /* Taille du prix */
-    color: #6AB5D0; /* Couleur du prix, ici un vert */
-    font-weight: bold; /* Texte en gras */
-    margin-top: 10px; /* Espacement au-dessus du prix */
-}
-
-.title{
-    font-size: 36px;
-}
-
-.prestations{
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-}
- .aside-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center; 
-        align-items: center; /* Ajouté pour le centrage vertical */
-        height: 100%;    
- }
-
 
 </style>
 
 <div class="justify-content-center">
-    <header class=" d-flex justify-content-between">
-    
-    <div>
-        <img class="d-none d-md-inline logo-size" src="img/Logo Carca.svg" alt="Logo CarcassonneWeb">
-        <img class="d-inline d-md-none" src="img/Logo Carca 2.svg" alt="Logo CarcassonneWeb" style="width:100px;">
-    </div>
-    <nav class="mb-auto  p-5">
-        <a href={{ path('app_contact') }} ><i class="fa-solid fa-address-card"></i> Contact</a>
-    </nav>
-    <div class="mb-auto  p-5">+33 6 62 39 11 24</div>
+    <header >
+        <div class=" d-flex justify-content-between">
+           <div>
+                <img class="logo-size d-inline-block" src="img/Logo_Carca.svg" alt="Logo CarcassonneWeb">
+        </div>
+             <nav class="mb-auto p-5 d-flex flex-column flex-md-row align-items-center">
+                <!-- Lien Contact: Affiche le texte complet sur grand écran et un icône sur les petits écrans -->
+                <a class="custom-link d-none d-md-inline-block" data-bs-toggle="tooltip" title="Envoyez-moi un email !" data-placement="top" href="{{ path('app_contact') }}" data-turbo-frame="contact-form-frame">
+                    <i class="fa-solid fa-address-card"></i> Contact
+                </a>
+                <!-- Lien Contact réduit pour les petits écrans -->
+                <a class="custom-link d-inline-block d-md-none" data-bs-toggle="tooltip" title="Envoyez-moi un email !" data-placement="right" href="{{ path('app_contact') }}" data-turbo-frame="contact-form-frame">
+                    <i class="fa-solid fa-address-card"></i>
+                </a>
+
+                <!-- Numéro de téléphone: Affiche le texte complet sur grand écran et un icône sur les petits écrans -->
+                <a class="custom-link d-none d-md-inline-block mb-auto p-5" data-bs-toggle="tooltip" title="Appelez-moi ! au 06 62 39 11 24" data-placement="top" href="{{ path('app_contact') }}" data-turbo-frame="contact-form-frame">
+                    <i class="fa-solid fa-phone"></i> 06 62 39 11 24
+                </a>
+                <!-- Numéro de téléphone réduit pour les petits écrans -->
+                <a class="custom-link d-inline-block d-md-none" data-bs-toggle="tooltip" title="Appelez-moi !  au 06 62 39 11 24" data-placement="right" href="{{ path('app_contact') }}" data-turbo-frame="contact-form-frame">
+                    <i class="fa-solid fa-phone"></i>
+                </a>
+            </nav>
+        </div>
+        
 </header>
 
-<section class="drap"></section>
 
-<div class=" row    m-5">
-    <div class="d-flex justify-content-center presentation text-center">
-      <div class="img-ghis"><img src="/img/ghislain.jpeg" alt="Ghislain Vachet">
-</div>  
-        <div class="  aside-container ml-5"> 
-            <h1>Ghislain Vachet </h1>
-            <h2>Votre Développeur Freelance à Carcassonne </h2>
-            <h3>Mais pas que, je me déplace ou télétravaille dans toute la france</h3>
-            <h3>En tant que Développeur Web je vous propose de nombreuses solutions de site web, suivant vos besoins et a une échelles humaine.
-            Découvrez mes prestations</h3>
+<div class=" fixe"></div>
+
+    <turbo-frame id="contact-form-frame">
+        <div class=" d-flex justify-content-center  text-center container  align-items-center ">
+        
+                <img src="{{ asset('img/profil.png') }}" alt="mon profil" class="img-fluid m-5 " style="max-width: 80%; width: 60%;">
+            
+                <div class="  aside-container ml-5"> 
+                    <h1>Ghislain Vachet </h1>
+                    <h2>Votre Développeur Freelance à Carcassonne </h2>
+                </div>
+        
         </div>
+     </turbo-frame>  
+            
 
-    </div>
-</div>
 
-<section class="drap">
-
+<section class="drap d-flex row  align-items-center full-height text-center">
+    <h3 >En tant que Développeur Web je vous propose de nombreuses solutions de site web, suivant vos besoins et a une échelles humaine.</h3>
+         
+        
 </section>
 
 <div class=" row rounded border border-5  text-center m-5">
@@ -136,7 +67,7 @@ header {
         
       
             <div class=" mb-5">
-                <div class="card ">
+                 <div class="card hidden " data-controller="animate-card" data-delay="0s">
                     <img src="img/No-code2-min.png" class="card-img-top" alt="Wordpress">
                     <div class="card-body">
                         <h2 class="card-title">Création de Site WordPress</h2>
@@ -148,7 +79,7 @@ header {
 
   
             <div class=" mb-5">
-                <div class="card">
+                <div class="card hidden" data-controller="animate-card" data-delay="0.5s">
                     <img src="img/Code2-min.png" class="card-img-top" alt="Code">
                     <div class="card-body">
                         <h2 class="card-title">Création de Site avec PHP/Symfony</h2>
@@ -159,7 +90,7 @@ header {
             </div>
       
          <div class=" mb-5">
-                <div class="card">
+                <div class="card hidden" data-controller="animate-card" data-delay="1s">
                     <img src="img/e-commerce2-min.png" class="card-img-top" alt="e-commerce">
                     <div class="card-body">
                         <h2 class="card-title">Création de Site E-commerce</h2>
@@ -179,7 +110,14 @@ header {
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
+    <script>
+   document.addEventListener('DOMContentLoaded', function () {
+      var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+      var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+         return new bootstrap.Tooltip(tooltipTriggerEl)
+      })
+   });
+</script>
 
 </div>
 {% endblock %}

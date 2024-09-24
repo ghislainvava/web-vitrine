@@ -1,4 +1,143 @@
+@import "~animate.css/animate.min.css"; /* Importation de la bibliothèque Animate.css pour les animations */
+
+/* Styles généraux pour le corps de la page */
 body {
-  width: 100%;
-  margin: auto;
+    width: 100%; /* Largeur totale */
+    margin: auto; /* Centrer le contenu */
+}
+
+/* Animation CSS avec Animate.css */
+
+
+/* Exemple d'animation spécifique : fadeInDown */
+.animate__fadeInDown {
+    animation-name: fadeInDown; /* Cette classe doit exister dans Animate.css */
+}
+
+/* Styles pour les cartes */
+.card {
+    background-color: rgba(255, 255, 255, 0.5); /* Couleur de fond semi-transparente */
+    border: 1px solid #ddd; /* Bordure légère */
+    border-radius: 4px; /* Coins arrondis */
+    max-width: 500px; /* Largeur maximale de la carte */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre légère pour effet de profondeur */
+    margin: 10px 0; /* Espacement vertical entre les cartes */
+}
+
+/* Styles pour l'image en haut de la carte */
+.card-img-top {
+    width: 100%; /* Prend toute la largeur de la carte */
+    border-top-left-radius: 4px; /* Coins arrondis en haut à gauche */
+    border-top-right-radius: 4px; /* Coins arrondis en haut à droite */
+}
+
+/* Styles pour le corps de la carte */
+.card-body {
+    padding: 15px; /* Espacement interne */
+}
+
+/* Styles pour le titre de la carte */
+.card-title {
+    font-size: 24px; /* Taille de la police pour le titre */
+    color: #333; /* Couleur du texte */
+}
+
+/* Styles pour le texte de la carte */
+.card-text {
+    font-size: 16px; /* Taille de la police pour le texte */
+    color: #666; /* Couleur du texte */
+}
+
+/* Styles pour le prix affiché dans la carte */
+.card-price {
+    font-size: 20px; /* Taille de la police pour le prix */
+    color: #6AB5D0; /* Couleur spécifique pour le prix */
+    font-weight: bold; /* Texte en gras */
+    margin-top: 10px; /* Espacement au-dessus du prix */
+}
+
+/* Styles pour le titre principal */
+.title {
+    font-size: 36px; /* Taille du titre principal */
+}
+
+/* Styles pour le conteneur de texte latéral */
+.aside-container {
+    display: flex; /* Utilisation de flexbox pour le conteneur */
+    flex-direction: column; /* Aligne les éléments en colonne */
+    justify-content: center; /* Centre le contenu verticalement */
+    height: 100%; /* Hauteur maximale */
+}
+
+/* Espacement personnalisé */
+.custom-spacing {
+    margin-bottom: 0.5rem; /* Espacement en bas */
+}
+
+/* Styles pour le bouton personnalisé */
+.custom-btn {
+    background-color: #6AB5D0; /* Couleur de fond du bouton */
+    border: none; /* Supprime la bordure par défaut */
+    color: white; /* Couleur du texte du bouton */
+}
+
+/* Styles pour le bouton au survol */
+.custom-btn:hover {
+    background-color: #4a9fc4; /* Couleur de fond au survol */
+}
+
+/* Styles pour les liens dans la navigation */
+nav a,
+.custom-link {
+    text-decoration: none; /* Supprime le soulignement */
+    font-weight: normal; /* Poids de la police normal */
+    color: #6AB5D0; /* Couleur des liens */
+    transition: font-weight 0.3s, font-size 0.3s; /* Transition fluide pour les changements */
+}
+
+.fa-solid {
+  color: #6AB5D0;
+}
+
+/* Styles pour les liens au survol */
+nav a:hover,
+.custom-link:hover {
+    font-weight: bold; /* Gras au survol */
+    margin-top: 10px; /* Légère élévation au survol */
+}
+
+/* Styles pour le header */
+header {
+    position: sticky; /* Fixe le header en haut lors du défilement */
+    top: 0; /* Positionne en haut */
+    z-index: 1000; /* Assure que le header reste au-dessus des autres éléments */
+    background-color: white; /* Fond blanc pour éviter la transparence */
+    width: 100%; /* Couvre toute la largeur */
+    font-size: 36px; /* Taille de la police du header */
+    display: flex; /* Utilise flexbox pour la mise en page */
+    flex-direction: column; /* Aligne les éléments en colonne */
+    border-bottom: 5px solid #6AB5D0; /* Bordure en bas */
+}
+
+/* Styles pour le drapeau */
+.drap { 
+    height: 150px; /* Hauteur fixe */
+    background-color: #6AB5D0; /* Couleur de fond */
+}
+
+/* Styles pour la taille du logo */
+.logo-size {
+    width: 200px; /* Largeur fixe */
+    height: auto; /* Hauteur automatique */
+}
+
+/* Styles pour une autre taille de logo */
+.logo-size-one {
+    width: 100px; /* Largeur fixe */
+    height: auto; /* Hauteur automatique */
+}
+
+.fixe {
+  height: 150px;
+  background-color: #6AB5D0; 
 }

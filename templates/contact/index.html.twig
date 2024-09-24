@@ -7,27 +7,20 @@
 
 </style>
 <div>
-     <header class="d-flex  justify-content-between">
-    
-        <div>
-            <img class="d-none d-md-inline logo-size" src="img/Logo Carca.svg" alt="Logo CarcassonneWeb">
-            <img class="d-inline d-md-none" src="img/Logo Carca 2.svg" alt="Logo CarcassonneWeb" style="width:100px;">
-        </div>
-        <nav class="mb-auto  p-5">
-        
-            <a href="http://127.0.0.1:8000"><i class="fa-solid fa-house"> Accueil</a>
-      
-        </nav>
-    </header>
 
-    <div class="container">
-        <h2>Contactez-nous</h2>
-        {{ form_start(form, {'attr': {'class': 'form'}}) }}
-        {{ form_row(form.name, {'attr': {'class': 'form-control'}}) }}
-        {{ form_row(form.email, {'attr': {'class': 'form-control'}}) }}
-        {{ form_row(form.message, {'attr': {'class': 'form-control'}}) }}
-        {{ form_row(form.send, {'attr': {'class': 'btn btn-primary'}}) }}
+
+    <turbo-frame id="contact-form-frame">
+    <div class="container m-5">
+        <!-- Lien de retour pour cacher le formulaire -->
+        <a href="{{ path('app_home') }}" data-turbo-frame="_top"> <i class="fa-solid fa-rotate-left "></i></a>
+        <h2>Contactez-moi !</h2>
+        {{ form_start(form, {'attr': {'class': 'form mb-3'}}) }}
+        {{ form_row(form.name, {'attr': {'class': 'form-control mb-3'}}) }}
+        {{ form_row(form.email, {'attr': {'class': 'form-control mb-3'}}) }}
+        {{ form_row(form.message, {'attr': {'class': 'form-control mb-3', 'style': 'min-height: 150px;'}}) }}
+        {{ form_row(form.send, {'attr': {'class': 'btn btn-primary custom-btn mb-3'}}) }}
         {{ form_end(form) }}
     </div>
+</turbo-frame>
 </div>
 {% endblock %}
