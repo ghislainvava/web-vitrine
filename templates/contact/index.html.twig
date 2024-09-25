@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contactez-moi!{% endblock %}
+
+{% block body %}
+<style>
+
+</style>
+<div>
+
+
+    <turbo-frame id="contact-form-frame">
+    <div class="container m-5">
+        <!-- Lien de retour pour cacher le formulaire -->
+        <a href="{{ path('app_home') }}" data-turbo-frame="_top"> <i class="fa-solid fa-rotate-left "></i></a>
+        <h2>Contactez-moi !</h2>
+        {{ form_start(form, {'attr': {'class': 'form mb-3'}}) }}
+        {{ form_row(form.name, {'attr': {'class': 'form-control mb-3'}}) }}
+        {{ form_row(form.email, {'attr': {'class': 'form-control mb-3'}}) }}
+        {{ form_row(form.message, {'attr': {'class': 'form-control mb-3', 'style': 'min-height: 150px;'}}) }}
+        {{ form_row(form.send, {'attr': {'class': 'btn btn-primary custom-btn mb-3'}}) }}
+        {{ form_end(form) }}
+    </div>
+</turbo-frame>
+</div>
+{% endblock %}
